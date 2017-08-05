@@ -9,8 +9,20 @@ use \PHPUnit\Framework\TestCase;
 
 class ActionTypeAnnotationTest extends TestCase 
 {
-    public testIdentifyAction() 
+    /**
+     * @test 
+     */
+    public function testIdentifyAction() 
     {
-        
+        $this->assertTrue(true); 
     }
+
+    /**
+     * @test
+     */
+    public function justAnotherTest()
+    {
+        $this->assertFalse(true, "custom message");
+    }
+
 }
