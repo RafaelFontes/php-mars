@@ -1,5 +1,10 @@
+.ctags
+*.swp
+.project.vim
 composer.lock
 /vendor/
 build
 .phpcomplete_extended
 tags
+.undodir
+.vimproject
