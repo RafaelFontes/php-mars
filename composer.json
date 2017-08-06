@@ -20,7 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "RFontes\\Mars": "src/"
+            "RFontes\\PHPMars\\": "src/",
+            "test\\RFontes\\PHPMars\\": "test/"
         }
     }
 }
