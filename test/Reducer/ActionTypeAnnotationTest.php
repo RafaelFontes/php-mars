@@ -1,7 +1,6 @@
 <?php
 /**
- * This file contains unit tests for the annotation method
- * used on \RFontes\PHPMars\AbstractReduce
+ * File: test/Reducer/ActionTypeAnnotationTest.php
  *
  * PHP version 7
  *
