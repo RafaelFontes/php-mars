@@ -47,11 +47,18 @@ abstract class AbstractReducer implements InvokableReducerInterface
         );
     }
 
+    /**
+     * @param string $type
+     */
     private function isTypeMapped($type)
     {
         return isset($this->actionTypeToMethodMap[$type]);
     }
 
+    /**
+     * @param mixed $state
+     * @param ActionInterface $action
+     */
     private function reduce($state, ActionInterface $action)
     {
         return $this->actionTypeToMethodMap[$action->getType()]->invoke($this, $state, $action);
