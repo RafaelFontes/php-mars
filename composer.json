@@ -8,7 +8,7 @@
         "phpmd/phpmd": "^2.6",
         "phpmetrics/phpmetrics": "^2.2"
     },
-    "license": "MIT",
+    "license": "UNLICENSE",
     "authors": [
         {
             "name": "Rafael Fontes",
