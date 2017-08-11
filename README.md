@@ -5,18 +5,13 @@ This is a port from the popular state management library [redux](http://redux.js
 ### Sample usage
 ```php
 $reducer = function ($state, $action) {
-    if (! is_array($action)) {
-        $type = get_class($action);
-        $action = (array)$action;
-        $action['type'] = $type;
-    }
-    return ($action['type'] == 'middleware2') ? false : true;
+    return ($action['type'] == 'intercepted') ? false : true;
 };
 
 $middleware = function ($getState, $dispatch) { return function ($next) {
         return function ($action) use ($next) {
-            if ($action['type'] != 'middleware') {
-                return $next(['type' => 'middleware2']);
+            if ($action['type'] == 'dothis') {
+                return $next(['type' => 'intercepted']);
             }
             return $next($action);
         };
@@ -24,7 +19,10 @@ $middleware = function ($getState, $dispatch) { return function ($next) {
 };
 
 $store = Store::create($reducer, true, Redux::applyMiddleware($middleware));
-$store->dispatch(['type'=> 'middleware']);
+
+var_dump($store->getState()); // bool(true)
+
+$store->dispatch(['type'=> 'dothis']);
 
 var_dump($store->getState()); // bool(false)
 
