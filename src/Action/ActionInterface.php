@@ -15,9 +15,13 @@ namespace RFontes\PHPMars\Action;
 interface ActionInterface
 {
     /**
-     * Retrieve the type name of the action
-     *
-     * @return string
+     * Returns the type of the action
      */
     public function getType();
+
+    /**
+     * Returns a serialized string of the action
+     * @return string
+     */
+    public function serizalize();
 }
